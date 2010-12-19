@@ -15,8 +15,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "phocoder-rb"
   gem.homepage = "http://github.com/jagthedrummer/phocoder-rb"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{The ruby client for the phocoder.com API.}
+  gem.description = %Q{The ruby client for the phocoder.com API.}
   gem.email = "jagthedrummer@gmail.com"
   gem.authors = ["Jeremy Green"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
