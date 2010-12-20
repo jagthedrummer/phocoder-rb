@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{phocoder-rb}
-  s.version = ""
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jeremy Green"]
@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
+    "VERSION",
     "lib/phocoder.rb",
     "lib/phocoder/base.rb",
     "lib/phocoder/errors.rb",
