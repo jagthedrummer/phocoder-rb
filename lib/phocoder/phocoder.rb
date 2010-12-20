@@ -4,7 +4,7 @@ module Phocoder
   mattr_writer :base_url
 
   self.api_key  = nil
-  self.base_url = 'https://app.zencoder.com/api'
+  self.base_url = 'https://photoapi.chaos.webapeel.com/'
 
   def self.api_key
     @@api_key || ENV['PHOCODER_API_KEY']
