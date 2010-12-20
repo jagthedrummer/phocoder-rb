@@ -34,6 +34,7 @@ Gem::Specification.new do |s|
     "lib/phocoder/job.rb",
     "lib/phocoder/phocoder.rb",
     "lib/phocoder/response.rb",
+    "phocoder-rb.gemspec",
     "spec/phocoder/http/net_http_spec.rb",
     "spec/phocoder/http/typhoeus_spec.rb",
     "spec/phocoder/http_spec.rb",
