@@ -9,7 +9,7 @@ describe "Phocoder::Job" do
   describe ".create" do
     before(:each) do
       @url = "#{Phocoder.base_url}/jobs"
-      @params = {:api_key => @api_key,:input => "s3://bucket-name/file-name.avi" }
+      @params = {:api_key => @api_key,:input => "s3://bucket-name/file-name.jpg" }
       @params_as_json = Phocoder::Base.encode(@params, :json)
       @params_as_xml = Phocoder::Base.encode(@params, :xml)
     end
