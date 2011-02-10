@@ -1,7 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    activesupport (3.0.3)
+    activesupport (3.0.0)
     addressable (2.2.2)
     autotest (4.4.4)
     builder (2.1.2)
@@ -34,7 +34,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activesupport
+  activesupport (~> 3.0.0)
   autotest (= 4.4.4)
   builder
   bundler (~> 1.0.0)
