@@ -63,7 +63,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
     describe ".post" do
       it "should POST to specified body to the specified path" do
-        Phocoder::HTTP.http_backend.expects(:post).
+        Phocoder::HTTP::NetHTTP.expects(:post).
                                       with('https://example.com',:body => '{}').
                                       returns(Phocoder::Response.new)
         Phocoder::HTTP::NetHTTP.post('https://example.com',:body => '{}').should_not be_nil
@@ -72,7 +72,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
     describe ".put" do
       it "should PUT to specified body to the specified path" do
-        Phocoder::HTTP.http_backend.expects(:put).
+        Phocoder::HTTP::NetHTTP.expects(:put).
                                       with('https://example.com',:body => '{}').
                                       returns(Phocoder::Response.new)
         Phocoder::HTTP::NetHTTP.put('https://example.com', :body => '{}')
@@ -81,7 +81,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
     describe ".get" do
       it "should GET to specified body to the specified path" do
-        Phocoder::HTTP.http_backend.expects(:get).
+        Phocoder::HTTP::NetHTTP.expects(:get).
                                       with('https://example.com').
                                       returns(Phocoder::Response.new)
         Phocoder::HTTP::NetHTTP.get('https://example.com')
@@ -90,7 +90,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
     describe ".delete" do
       it "should DELETE to specified body to the specified path" do
-        Phocoder::HTTP.http_backend.expects(:delete).
+        Phocoder::HTTP::NetHTTP.expects(:delete).
                                       with('https://example.com').
                                       returns(Phocoder::Response.new)
         Phocoder::HTTP::NetHTTP.delete('https://example.com')

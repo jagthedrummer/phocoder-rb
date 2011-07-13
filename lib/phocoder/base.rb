@@ -28,15 +28,19 @@ module Phocoder
     end
     
     def self.decode(content, format=nil)
-      if content.is_a?(String)
-        if format.to_s == 'xml'
-          Hash.from_xml(content)
+      begin
+        if content.is_a?(String)
+          if format.to_s == 'xml'
+            Hash.from_xml(content)
+          else
+            ActiveSupport::JSON.decode(content)
+          end
         else
-          ActiveSupport::JSON.decode(content)
+          content
         end
-      else
+      rescue Exception => e
         content
-      end
+      end   
     end
 
     def decode(content, format=nil)
