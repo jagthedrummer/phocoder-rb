@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{phocoder-rb}
-  s.version = "0.1.3"
+  s.version = "0.1.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jeremy Green"]
-  s.date = %q{2011-02-10}
+  s.date = %q{2011-07-13}
   s.description = %q{The ruby client for the phocoder.com API.}
   s.email = %q{jagthedrummer@gmail.com}
   s.extra_rdoc_files = [
@@ -47,7 +47,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/jagthedrummer/phocoder-rb}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.7}
+  s.rubygems_version = %q{1.6.2}
   s.summary = %q{The ruby client for the phocoder.com API.}
   s.test_files = [
     "spec/phocoder/http/net_http_spec.rb",
@@ -60,7 +60,6 @@ Gem::Specification.new do |s|
   ]
 
   if s.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
