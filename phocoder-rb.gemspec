@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{phocoder-rb}
-  s.version = "0.1.4"
+  s.version = "0.1.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Jeremy Green"]
-  s.date = %q{2011-07-13}
+  s.authors = [%q{Jeremy Green}]
+  s.date = %q{2011-09-08}
   s.description = %q{The ruby client for the phocoder.com API.}
   s.email = %q{jagthedrummer@gmail.com}
   s.extra_rdoc_files = [
@@ -20,7 +20,6 @@ Gem::Specification.new do |s|
     ".document",
     ".rspec",
     "Gemfile",
-    "Gemfile.lock",
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
@@ -45,9 +44,9 @@ Gem::Specification.new do |s|
     "spec/spec_helper.rb"
   ]
   s.homepage = %q{http://github.com/jagthedrummer/phocoder-rb}
-  s.licenses = ["MIT"]
-  s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.6.2}
+  s.licenses = [%q{MIT}]
+  s.require_paths = [%q{lib}]
+  s.rubygems_version = %q{1.8.5}
   s.summary = %q{The ruby client for the phocoder.com API.}
   s.test_files = [
     "spec/phocoder/http/net_http_spec.rb",
