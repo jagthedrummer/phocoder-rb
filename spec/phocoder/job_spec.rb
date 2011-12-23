@@ -15,14 +15,14 @@ describe "Phocoder::Job" do
     end
     
     it "should POST to the correct url and return a response" do
-      Phocoder::HTTP.expects(:post).with(@url, @params_as_json, {}).returns(Phocoder::Response.new)
+      Phocoder::HTTP.expects(:post).with(@url + ".json", @params_as_json, {}).returns(Phocoder::Response.new)
       r = Phocoder::Job.create(@params)
       r.class.should == Phocoder::Response
     end
     
     it "should apply the global API key when JSON and no api_key is passed" do
       Phocoder.api_key = 'asdfasdf'
-      Phocoder::HTTP.expects(:post).with(@url,@params_as_json,{}) do |url, params, options|
+      Phocoder::HTTP.expects(:post).with(@url + ".json",@params_as_json,{}) do |url, params, options|
         Phocoder::Base.decode(params)['api_key'].should == Phocoder.api_key
         end.returns(Phocoder::Response.new)
       Phocoder::Job.create(:input => @params[:input])
@@ -31,7 +31,7 @@ describe "Phocoder::Job" do
       
     it "should apply the global API key when XML and no api_key is passed" do
       Phocoder.api_key = 'asdfasdf'
-      Phocoder::HTTP.expects(:post).with(@url,@params_as_xml,{}) do |url, params, options|
+      Phocoder::HTTP.expects(:post).with(@url + ".xml",@params_as_xml,{}) do |url, params, options|
         Phocoder::Base.decode(params, :xml)['api_request']['api_key'].should == Phocoder.api_key
       end.returns(Phocoder::Response.new)
       Phocoder::Job.create({:api_request => {:input => @params[:input]}}, {:format => :xml})
@@ -40,7 +40,7 @@ describe "Phocoder::Job" do
         
     it "should apply the global API key when an XML string is passed and no api_key is passed" do
       Phocoder.api_key = 'asdfasdf'
-      Phocoder::HTTP.expects(:post).with(@url,@params_as_xml,{}) do |url, params, options|
+      Phocoder::HTTP.expects(:post).with(@url + ".json",@params_as_xml,{}) do |url, params, options|
         Phocoder::Base.decode(params, :xml)['api_request']['api_key'] == Phocoder.api_key
       end.returns(Phocoder::Response.new)
       Phocoder::Job.create({:input => @params[:input]}.to_xml(:root => :api_request), {:format => :xml})
@@ -56,7 +56,7 @@ describe "Phocoder::Job" do
     end
 
     it "should GET the correct url and return a response" do
-      Phocoder::HTTP.stubs(:get).with(@url, {:params => {:api_key => @api_key,
+      Phocoder::HTTP.stubs(:get).with(@url + ".json", {:params => {:api_key => @api_key,
                                                           :page => 1,
                                                           :per_page => 50,
                                                           :state => nil}}).returns(Phocoder::Response.new)
@@ -64,7 +64,7 @@ describe "Phocoder::Job" do
     end
 
     it "should merge params well" do
-      Phocoder::HTTP.stubs(:get).with(@url, {:params => {:api_key => @api_key,
+      Phocoder::HTTP.stubs(:get).with(@url + ".json", {:params => {:api_key => @api_key,
                                                          :page => 1,
                                                          :per_page => 50,
                                                          :some => 'param',
@@ -80,7 +80,7 @@ describe "Phocoder::Job" do
     end
 
     it "should GET the correct url and return a response" do
-      Phocoder::HTTP.stubs(:get).with(@url, {:params => {:api_key => @api_key}}).returns(Phocoder::Response.new)
+      Phocoder::HTTP.stubs(:get).with(@url + ".json", {:params => {:api_key => @api_key}}).returns(Phocoder::Response.new)
       Phocoder::Response.should ==  Phocoder::Job.details(1, :api_key => @api_key).class
     end
   end
@@ -92,7 +92,7 @@ describe "Phocoder::Job" do
     end
 
     it "should GET the correct url and return a response" do
-      Phocoder::HTTP.stubs(:get).with(@url, {:params => {:api_key => @api_key}}).returns(Phocoder::Response.new)
+      Phocoder::HTTP.stubs(:get).with(@url + ".json", {:params => {:api_key => @api_key}}).returns(Phocoder::Response.new)
       Phocoder::Response.should ==  Phocoder::Job.resubmit(1, :api_key => @api_key).class
     end
   end
@@ -104,7 +104,7 @@ describe "Phocoder::Job" do
     end
 
     it "should GET the correct url and return a response" do
-      Phocoder::HTTP.stubs(:get).with(@url, {:params => {:api_key => @api_key}}).returns(Phocoder::Response.new)
+      Phocoder::HTTP.stubs(:get).with(@url + ".json", {:params => {:api_key => @api_key}}).returns(Phocoder::Response.new)
       Phocoder::Response.should ==  Phocoder::Job.cancel(1, :api_key => @api_key).class
     end
   end
@@ -116,7 +116,7 @@ describe "Phocoder::Job" do
     end
 
     it "should DELETE the correct url and return a response" do
-      Phocoder::HTTP.stubs(:delete).with(@url, {:params => {:api_key => @api_key}}).returns(Phocoder::Response.new)
+      Phocoder::HTTP.stubs(:delete).with(@url + ".json", {:params => {:api_key => @api_key}}).returns(Phocoder::Response.new)
       Phocoder::Response.should ==  Phocoder::Job.delete(1, :api_key => @api_key).class
     end
 end
