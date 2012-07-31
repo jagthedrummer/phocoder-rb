@@ -91,7 +91,7 @@ A secondary options hash can be passed to any method call which will then be pas
 Phocoder::Job.create({:input => '....', ...}, {:timeout => 1000})
 ```
 
-
+<!--
 ### SSL Verification
 
 We will use our bundled SSL CA chain for SSL peer verification which should almost always work without a hitch. However, if you'd like to skip SSL verification you can pass an option in the secondary options hash.
@@ -107,6 +107,7 @@ Alternatively you can add it to the default options.
 ```ruby
 Phocoder::HTTP.default_options.merge!(:skip_ssl_verify => true)
 ```
+-->
 
 ### Default Options
 
