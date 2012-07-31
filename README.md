@@ -118,12 +118,7 @@ Phocoder::HTTP.default_options = {:timeout => 3000,
                                                'Content-Type' => 'application/json'}}
 ```
 
-## Advanced JSON
 
-### Alternate JSON Libraries
-
-This library uses the `multi_json` gem to encode and decode JSON. This fantastic gem lets you swap out the JSON backend at will and includes a working JSON encoder/decoder. You can check the [MultiJson](https://github.com/intridea/multi_json) project for more information on how to accomplish this.
-    
 Contributing to phocoder-rb
 -----------------------------
 
