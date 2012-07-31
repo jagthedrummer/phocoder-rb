@@ -1,7 +1,8 @@
 phocoder-rb
 ================
 
-Phocoder-rb is a ruby gem for easy interaction with the  [Phocoder](http://phocoder.com) image processing service.  
+Phocoder-rb is a ruby gem for easy interaction with the  [Phocoder](http://phocoder.com) image processing service.
+It allows you to easily add image handling to your app without needint to create or manage image processing infrastructure.
 
 ## Getting Started
 
@@ -61,7 +62,10 @@ To get a list of your recent jobs you could do:
     jobs = job_response.body
     ````
 
-    
+## Phocoder API
+
+Please see the [Phocoder API documentation](http://www.phocoder.com/api) for more information about the details
+and options you can use when creating jobs.
     
 ## Advanced HTTP
 
